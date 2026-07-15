@@ -27,10 +27,25 @@ Notes:
 ## Run 2
 
 Changes:
-- Enabled weight tying.
-- Switched Adam → AdamW (weight_decay=0.01).
-- Added gradient clipping (max_norm=1.0).
-- Added cosine learning-rate schedule.
+- Enabled weight tying
+- AdamW
+- Cosine LR scheduler
+- Gradient clipping
 
-Reason:
-Simple optimization improvements with minimal code changes.
+Result:
+- BPB increased from 2.3718 to 2.6956.
+
+Conclusion:
+- Rejected these changes and reverted to the baseline training configuration.
+
+## Run 3
+
+Changes:
+- Increased embedding dimension from 160 to 192.
+
+Result:
+- BPB: 2.3472
+
+Conclusion:
+- Best performing model.
+- Final submission uses this checkpoint.
